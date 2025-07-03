@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <label for="">Enter Email</label>
+    <input id ="email" type="email">
+
+    <label for="">Enter Password</label>
+    <input  id="password" type="password">
+
+    <button id="login">Login</button>
+    <script>
+        var login = document.getElementById("login")
+        login.addEventListener("click",()=>{
+            var email =document. getElementById("email").value
+            var password =  document.getElementById("password").value
+            if(email.length==0 && password.length==0)
+        {
+            alert("not entered anything")
+        }
+        else{
+            var data1=localStorage.getItem("memail")
+            var data2 = localStorage.getItem("mpassword")
+            if(email == data1 && password ==data2)
+        {
+            alert("login successful")
+            window.location.href="welcome.html"
+        }
+        else{
+            alert("login failed")
+        }}
+        })
+        console.log(localStorage)
+
+    </script>
+</body>
+</html>

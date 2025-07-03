@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Create Account</h1>
+    <label for="">Enter Name</label>
+    <input id="name" placeholder="Enter your name" type="text">
+
+    <label for="">Enter Email</label>
+    <input id="email" placeholder="Enter your email" type="email">
+
+    <label for="">Enter Password</label>
+    <input id="password" placeholder="Enter password" type="text">
+
+    <label for="">Conform Password</label>
+    <input id="conpassword"  type="password">
+     
+    <button id="signup">signup</button>
+    <a href="login.html">Account exists login</a>
+    <script>
+        var signup = document.getElementById("signup")
+        signup.addEventListener("click",()=>{
+            var myname = document.getElementById("name").value 
+            var myemail=document.getElementById("email").value
+            var mypassword = document.getElementById("password").value
+            var cpassword = document.getElementById("conpassword").value
+        if(myname.length==0 && myemail.length==0 && mypassword.length ==0 && cpassword.length==0)
+        {
+            alert("not entered any thing")
+        }
+        else{
+            localStorage.setItem("mname",myname)
+            localStorage.setItem("memail",myemail)
+            localStorage.setItem("mpassword",mypassword)
+            localStorage.setItem("mcpassword",cpassword)
+            if(mypassword==cpassword)
+        {
+            console.log(localStorage)
+        }
+         else{
+            alert("password not matched")
+         }}
+        })
+    </script>
+   
+
+</body>
+</html>
